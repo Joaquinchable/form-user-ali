@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
+import { ContainerMessage } from "./../../Styled/styled";
 
 const UserForm = ({ Title }) => {
-  const [showMenssage, setShowMenssage] = useState([]);
+  const [showMessage, setShowMessage] = useState([]);
   const [userName, setUserName] = useState({
     name: " ",
     secundName: " ",
@@ -23,8 +23,8 @@ const UserForm = ({ Title }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setShowMenssage([
-      ...showMenssage,
+    setShowMessage([
+      ...showMessage,
       {
         fullName: userName,
       },
@@ -38,7 +38,7 @@ const UserForm = ({ Title }) => {
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group>
           <Form.Label>{Title} </Form.Label>
           <Form.Control
             type="text"
@@ -75,21 +75,22 @@ const UserForm = ({ Title }) => {
           />
         </Form.Group>
 
-        <Button className="btn btn-primary btn-block" type="submit">
+        <Button className="btn btn-primary " type="submit">
           Agregar
         </Button>
       </Form>
+
       <br />
 
       <div>
-        {showMenssage.map((item, index) => (
-          <Container key={index} className="rounded-sm  alert-danger">
+        {showMessage.map((item, index) => (
+          <ContainerMessage key={index}>
             <p>
               {" "}
-               {item.fullName.name} {item.fullName.secundName}{" "}
+              {item.fullName.name} {item.fullName.secundName}{" "}
               {item.fullName.lastName} {item.fullName.secundLastName}
             </p>
-          </Container>
+          </ContainerMessage>
         ))}
       </div>
     </div>

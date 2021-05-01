@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
+import { ContainerMessage } from "./../../Styled/styled";
 
 function ContactForm({ Title }) {
-  const [showMenssage, setShowMenssage] = useState([]);
+  const [showMessage, setShowMessage] = useState([]);
   const [contactUser, setContactUser] = useState({
     email: " ",
     celular: " ",
@@ -21,8 +21,8 @@ function ContactForm({ Title }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setShowMenssage([
-      ...showMenssage,
+    setShowMessage([
+      ...showMessage,
       {
         fullContactUser: contactUser,
       },
@@ -40,7 +40,7 @@ function ContactForm({ Title }) {
           <Form.Label>{Title} </Form.Label>
           <Form.Control
             type="email"
-            placeholder="Correro Electronico"
+            placeholder="Correro Electrónico"
             name="email"
             onChange={handleInputChange}
           />
@@ -55,19 +55,18 @@ function ContactForm({ Title }) {
           />
         </Form.Group>
 
-        <Button className="btn btn-primary btn-block" type="submit">
+        <Button className="btn btn-primary " type="submit">
           Agregar
         </Button>
       </Form>
-      <br/>
+
+      <br />
       <div>
-        {showMenssage.map((item, index) => (
-          <Container key={index} className="rounded-sm  alert-danger">
-            <p>
-              {" "}
-              {item.fullContactUser.email} {item.fullContactUser.celular}{" "}
-            </p>
-          </Container>
+        {showMessage.map((item, index) => (
+          < ContainerMessage key={index} >
+            <p>Correo: {item.fullContactUser.email}</p>
+             <p> Celular: {item.fullContactUser.celular}{" "}</p>
+          </ ContainerMessage >
         ))}
       </div>
     </div>

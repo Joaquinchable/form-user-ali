@@ -1,19 +1,15 @@
-import React from 'react'
+import React from "react";
+import { AppBox, ContainerBox } from "./Styled/styled";
+import Chat from "./Components/ChatBox/ChatBox";
 
-import Chat from './Form/Card'
-
-function App() {
+const App = () => {
   return (
-    <div>
-      <Chat
-      
-       name= " Validacion de Usuario"
-       typeform= "¿Cual es tu nombre?"
-      />
-
-    </div>
-  )
+    <AppBox>
+      <ContainerBox>
+        <Chat name="Validación de Usuario"/>
+      </ContainerBox>
+    </AppBox>
+  );
 }
 
-export default App
-
+export default App;

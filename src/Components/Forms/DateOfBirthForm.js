@@ -1,58 +1,62 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
+import { ContainerMessage } from "./../../Styled/styled";
 
-const Meses = [
+const Months = [
   {
-    label: "Enero",
-    value: "enero",
-  },
-
-  {
-    label: "Febrero",
-    value: "febrero",
+    label: "1",
+    value: "Enero",
   },
 
   {
-    label: "Marzo",
-    value: "marzo",
+    label: "2",
+    value: "Febrero",
+  },
+
+  {
+    label: "3",
+    value: "Marzo",
   },
   {
-    label: "Abril",
-    value: "abril",
+    label: "4",
+    value: "Abril",
   },
   {
-    label: "Junio",
-    value: "junio",
+    label: "5",
+    value: "Abril",
   },
   {
-    label: "Julio",
-    value: "julio",
+    label: "6",
+    value: "Junio",
   },
   {
-    label: "Agosto",
-    value: "agosto",
+    label: "7",
+    value: "Julio",
   },
   {
-    label: "Septiembre",
-    value: "septiembre",
+    label: "8",
+    value: "Agosto",
   },
   {
-    label: "Octubre",
-    value: "octubre",
+    label: "9",
+    value: "Septiembre",
   },
   {
-    label: "Noviembre",
-    value: "noviembre",
+    label: "10",
+    value: "Octubre",
   },
   {
-    label: "Diciembre",
-    value: "diciembre",
+    label: "11",
+    value: "Noviembre",
+  },
+  {
+    label: "12",
+    value: "Diciembre",
   },
 ];
 
-const generateDayptions = () => {
+const generateDayOptions = () => {
   const arr = [];
 
   const startDay = 1;
@@ -79,7 +83,7 @@ const generateYearOptions = () => {
 };
 
 const DateOfBirthForm = ({ Title }) => {
-  const [showMenssage, setShowMenssage] = useState([]);
+  const [showMessage, setShowMessage] = useState([]);
   const [dateOfBirth, setDateOfBirth] = useState({
     day: 0,
     month: " ",
@@ -97,8 +101,8 @@ const DateOfBirthForm = ({ Title }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setShowMenssage([
-      ...showMenssage,
+    setShowMessage([
+      ...showMessage,
       {
         fullDateOfBirth: dateOfBirth,
       },
@@ -123,7 +127,7 @@ const DateOfBirthForm = ({ Title }) => {
             onChange={handleInputChange}
           >
             <option value="0">Dia</option>
-            {generateDayptions()}
+            {generateDayOptions()}
           </Form.Control>
         </Form.Group>
 
@@ -137,8 +141,8 @@ const DateOfBirthForm = ({ Title }) => {
           >
             <option value=" ">Mes</option>
 
-            {Meses.map((meses) => (
-              <option value={meses.value}>{meses.label} </option>
+            {Months.map((Month) => (
+              <option value={Month.value}>{Month.label} </option>
             ))}
           </Form.Control>
         </Form.Group>
@@ -156,7 +160,7 @@ const DateOfBirthForm = ({ Title }) => {
           </Form.Control>
         </Form.Group>
 
-        <Button className="btn btn-primary btn-block" type="submit">
+        <Button className="btn btn-primary " type="submit">
           Agregar
         </Button>
       </Form>
@@ -164,14 +168,14 @@ const DateOfBirthForm = ({ Title }) => {
       <br />
 
       <div>
-        {showMenssage.map((item, index) => (
-          <Container key={index} className="rounded-sm  alert-danger">
+        {showMessage.map((item, index) => (
+          <ContainerMessage key={index} >
             <p>
               {" "}
               {item.fullDateOfBirth.day} {item.fullDateOfBirth.month}{" "}
               {item.fullDateOfBirth.year}
             </p>
-          </Container>
+          </ContainerMessage>
         ))}
       </div>
     </div>
