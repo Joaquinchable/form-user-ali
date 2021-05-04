@@ -6,7 +6,7 @@ const App = () => {
   return (
     <AppBox>
       <ContainerBox>
-        <Chat name="Validación de Usuario"/>
+        <Chat title="Validación de Usuario"/>
       </ContainerBox>
     </AppBox>
   );

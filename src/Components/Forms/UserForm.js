@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { ContainerMessage } from "./../../Styled/styled";
 
-const UserForm = ({ Title }) => {
+const UserForm = ({ title }) => {
   const [showMessage, setShowMessage] = useState([]);
   const [userName, setUserName] = useState({
     name: " ",
@@ -39,7 +39,7 @@ const UserForm = ({ Title }) => {
     <div>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>{Title} </Form.Label>
+          <Form.Label>{title} </Form.Label>
           <Form.Control
             type="text"
             placeholder="Nombre"

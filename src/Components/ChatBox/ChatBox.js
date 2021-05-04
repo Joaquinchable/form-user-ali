@@ -14,7 +14,7 @@ import {
 } from "./../../Styled/styled";
 
 
-function Chat({ name }) {
+function Chat({ title }) {
   const [formStep, setFormStep] = useState(0);
   // const [showMenssageAll, setShowMenssageAll] = useState([]);
 
@@ -58,7 +58,7 @@ function Chat({ name }) {
   return (
     <ChatBox>
       <ConatinerAvatar>
-        <Title>{name}</Title>
+        <Title>{title}</Title>
 
         <BoxImg src={Avatar} alt="AvatarImg" />
       </ConatinerAvatar>
@@ -98,16 +98,7 @@ function Chat({ name }) {
           </ContainerMessage >
         )}
 
-        {/* <div>
-          {showMenssageAll.map((item, index) => (
-            <Container key={index} className="rounded-sm  alert-danger">
-              <p>
-                {" "}
-                {item.fullDataUser.email} {item.fullDataUser.celular}{" "}
-              </p>
-            </Container>
-          ))}
-        </div> */}
+     
       </CardContainer>
       {renderButton()}
     </ChatBox>

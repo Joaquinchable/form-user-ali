@@ -82,7 +82,7 @@ const generateYearOptions = () => {
   return arr;
 };
 
-const DateOfBirthForm = ({ Title }) => {
+const DateOfBirthForm = ({title }) => {
   const [showMessage, setShowMessage] = useState([]);
   const [dateOfBirth, setDateOfBirth] = useState({
     day: 0,
@@ -117,7 +117,7 @@ const DateOfBirthForm = ({ Title }) => {
     <div>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>{Title} </Form.Label>
+          <Form.Label>{title} </Form.Label>
           <Form.Control
             as="select"
             type="text"

@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { ContainerMessage } from "./../../Styled/styled";
 
-function ContactForm({ Title }) {
+function ContactForm({ title}) {
   const [showMessage, setShowMessage] = useState([]);
   const [contactUser, setContactUser] = useState({
     email: " ",
@@ -37,7 +37,7 @@ function ContactForm({ Title }) {
     <div>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Label>{Title} </Form.Label>
+          <Form.Label>{title} </Form.Label>
           <Form.Control
             type="email"
             placeholder="Correro Electrónico"
