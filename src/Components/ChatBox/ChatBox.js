@@ -61,7 +61,6 @@ function Chat({ title }) {
     <ChatBox>
       <ConatinerAvatar>
         <Title>{title}</Title>
-
         <BoxImg src={Avatar} alt="AvatarImg" />
       </ConatinerAvatar>
 

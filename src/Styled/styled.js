@@ -43,7 +43,7 @@ export const ChatBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 15px 10px 30px 10px;
+  padding: 15px 10px 50px 10px;
   width: 35%;
   height: 650px;
   background-color: white;
@@ -60,10 +60,9 @@ export const ChatBox = styled.div`
 
   /* Responsive */
 
-  @media (max-width: 667px) {
+  @media (max-width: 640px) {
     width: 100%;
-    height: 670px;
-    padding: 2px;
+    height: 650px;
   }
 
   @media (max-width: 712px) {
@@ -105,6 +104,7 @@ export const ConatinerAvatar = styled.div`
   /* Responsive */
 
   @media (max-width: 667px) {
+    display: flex;
     width: 100%;
     height: 100px;
     padding: 8px;
@@ -113,8 +113,8 @@ export const ConatinerAvatar = styled.div`
   @media (max-width: 812px) {
     width: 100%;
     height: 120px;
-    padding: 4px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    display: flex;
   }
 
   @media (max-width: 1024px) {
@@ -136,36 +136,47 @@ export const ConatinerAvatar = styled.div`
 
 export const BoxImg = styled.img`
   width: 25%;
-  margin-left: 100px;
+  /* margin-left: 100px; */
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
 
   /* Responsive */
 
-  @media (min-width: 640px) {
+  @media (min-width: 320px) {
     width: 30%;
-    margin-left: 30px;
-    background-color:white;
+    height: 80px ;
+    justify-content:space-between;
   }
 
-  @media (max-width: 812px) {
-    width: 30%;
-    margin-left: 10px;
+
+  @media (min-width: 375px) {
+    width: 50%;
+    height: 130px;
+    justify-content:space-between;
   }
 
-  @media (max-width: 1024px) {
-    width: 25%;
-    margin-left: 140px;
+  @media (min-width: 411px) {
+    width: 60%;
+    height: 150px;
+    justify-content:space-between;
   }
 
-  /* @media (max-width: 1366px) {
-    width: 25%;
-    margin-left: 170px;
-  }  */
+  @media (min-width: 768px) {
+    width: 28%;
+    height: 150px;
+    margin-right:25px;
+    
+  }
+
+  @media (min-width: 1024px) {
+    width: 23%;
+    height: 150px;
+    margin-right:35px;
+  }  
 `;
 
-export const Title = styled.h3`
+export const Title = styled.h2`
   color: #ffff;
   font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
@@ -174,24 +185,30 @@ export const Title = styled.h3`
 
   /* Responsive */
 
-  @media (max-width: 667px) {
-    font-size: 20px;
+  @media (min-width: 320px) {
+    font-size: 1.5rem;
     margin-top: 20px;
   }
 
-  @media (max-width: 812px) {
-    font-size: 20px;
-    margin-top: 20px;
+  @media (min-width: 411px) {
+    font-size: 2.5rem;
+    margin-top: 2px;
   }
 
-  @media (max-width: 1024px) {
-    font-size: 30px;
+
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
     margin-top: 25px;
+    margin-right:50px;
+   
   }
-  /* @media (max-width: 1366px) {
-    font-size: 40px;
-     margin-top: 55px;
-  }  */
+
+    @media (min-width: 1024px) {
+    font-size: 2.8rem;
+    margin-top:35px;
+    margin-right:60px;
+  }   
 `;
 
 export const CardContainer = styled.article`
@@ -210,7 +227,7 @@ export const CardContainer = styled.article`
   /* Responsive */
 
   @media (max-width: 667px) {
-    height: 400px;
+    height: 350px;
   }
 
   @media (max-width: 712px) {
