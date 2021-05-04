@@ -90,8 +90,8 @@ export const ConatinerAvatar = styled.div`
   justify-content: flex-end;
   margin-bottom: 15px;
   width: 100%;
-  height: 120px;
-  padding: 10px;
+  height: 140px;
+  padding: 5px;
   -webkit-border-radius: 25px;
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius: 25px;
@@ -135,11 +135,14 @@ export const ConatinerAvatar = styled.div`
 `;
 
 export const BoxImg = styled.img`
-  width: 25%;
+
+
   /* margin-left: 100px; */
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
+  
+ 
 
   /* Responsive */
 
@@ -174,14 +177,19 @@ export const BoxImg = styled.img`
     height: 150px;
     margin-right:35px;
   }  
+
+  @media (min-width: 1312px) {
+
+    width: 30%;
+    height:120px ;
+  
+  }
+
 `;
 
 export const Title = styled.h2`
   color: #ffff;
-  font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 30px;
-  margin-left: 30px;
+  
 
   /* Responsive */
 
@@ -208,7 +216,22 @@ export const Title = styled.h2`
     font-size: 2.8rem;
     margin-top:35px;
     margin-right:60px;
+
   }   
+
+  @media (min-width: 1312px) {
+
+  font-size: 2.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+  
+
+  }   
+
+
+
+
 `;
 
 export const CardContainer = styled.article`
