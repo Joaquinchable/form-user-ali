@@ -9,28 +9,30 @@ import {
   ConatinerAvatar,
   BoxImg,
   CardContainer,
-  ContainerMessage ,
-  Title
+  ContainerMessage,
+  Title,
 } from "./../../Styled/styled";
+import { useAuth } from "./../../Auth/auth";
+import CardDataComplete from "./../CardInformation/CardInformation";
 
 
 function Chat({ title }) {
   const [formStep, setFormStep] = useState(0);
   // const [showMenssageAll, setShowMenssageAll] = useState([]);
-
-  //Form Steps function 
+  const { user } = useAuth();
+  console.log(user);
+  //Form Steps function
   const completeStep = () => {
     setFormStep((cur) => cur + 1);
   };
 
-  //Button Steps function 
+  //Button Steps function
   const renderButton = () => {
     if (formStep > 3) {
-      return  (
+      return (
         <ContainerMessage>
-      <h2>¡Validación de Usuario Exitosa!</h2>
+          <h2>¡Validación de Usuario Exitosa!</h2>
         </ContainerMessage>
-        
       );
     } else if (formStep === 3) {
       return (
@@ -62,7 +64,7 @@ function Chat({ title }) {
 
         <BoxImg src={Avatar} alt="AvatarImg" />
       </ConatinerAvatar>
-      
+
       {/* Form Steps  */}
 
       <CardContainer>
@@ -74,7 +76,7 @@ function Chat({ title }) {
 
         {formStep === 1 && (
           <section>
-            <DateOfBirthForm  Title="¿Cuál es tu fecha de naciemiento?" />
+            <DateOfBirthForm Title="¿Cuál es tu fecha de naciemiento?" />
           </section>
         )}
 
@@ -84,21 +86,7 @@ function Chat({ title }) {
           </section>
         )}
 
-        {formStep === 3 && (
-          <ContainerMessage >
-            {" "}
-            <p> Revisa que tus datos sean correctos</p>{" "}
-             <ul>
-               <li>Nombre completo : </li>
-               <li>Fecha de naciemiento: </li>
-               <li>Correo:</li>
-               <li>Celular:</li>
-             </ul>
-
-          </ContainerMessage >
-        )}
-
-     
+        {formStep === 3 && <CardDataComplete />}
       </CardContainer>
       {renderButton()}
     </ChatBox>

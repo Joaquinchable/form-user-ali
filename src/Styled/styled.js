@@ -143,9 +143,10 @@ export const BoxImg = styled.img`
 
   /* Responsive */
 
-  @media (max-width: 667px) {
-    width: 25%;
+  @media (min-width: 640px) {
+    width: 30%;
     margin-left: 30px;
+    background-color:white;
   }
 
   @media (max-width: 812px) {

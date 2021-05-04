@@ -6,10 +6,10 @@ const App = () => {
   return (
     <AppBox>
       <ContainerBox>
-        <Chat title="Validación de Usuario"/>
+        <Chat title="Validación de Usuario" />
       </ContainerBox>
     </AppBox>
   );
-}
+};
 
 export default App;
